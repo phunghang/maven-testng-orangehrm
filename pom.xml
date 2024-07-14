@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>hangautomationtester</groupId>
+	<artifactId>maven-orangehrm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>maven-orangehrm</name>
+
+	<!-- Khai báo biến - Global Variable -->
+	<properties>
+		<!-- Encoding for Build/ Console -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Encoding for Report -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- Compiler Code with Java 17 -->
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+
+		<!-- Global variable for dependencies -->
+		<webdriver.version>4.16.1</webdriver.version>
+		<testng.version>6.14.3</testng.version>
+		<extent.version>5.1.0</extent.version>
+	</properties>
+
+	<!-- Quản lí thư viện -->
+	<dependencies>
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+		</dependency>
+
+		<!-- Selenium Java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${webdriver.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>${webdriver.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extent.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- Compiler/ Run Test -->
+	<build>
+		<plugins>
+			<!-- Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<!-- Compiler code vs Java 17 -->
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
+			</plugin>
+
+			<!-- Run test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration>
+					<!-- Run TestNG xml file -->
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/RunOrangeHRMTestcase.xml</suiteXmlFile>
+					</suiteXmlFiles>
+
+					<!-- Argument -->
+				
+				</configuration>
+
+
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
