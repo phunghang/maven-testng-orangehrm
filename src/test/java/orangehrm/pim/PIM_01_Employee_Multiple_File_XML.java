@@ -1,8 +1,9 @@
 package orangehrm.pim;
 
-import java.lang.reflect.Method;
-
+import commons.BaseTest;
 import commons.Environment;
+import commons.GlobalConstants;
+import commons.PageGeneratorManager;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -10,18 +11,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import commons.BaseTest;
-import commons.GlobalConstants;
-import commons.PageGeneratorManager;
-import pageObjects.AddNewEmployeePO;
-import pageObjects.DashboardPO;
-import pageObjects.EmployeeListPO;
-import pageObjects.LoginPO;
-import pageObjects.PersonnalDetailPO;
+import pageObjects.*;
 import reportConfig.ExtentTestManager;
 
-public class PIM_01_Employee extends BaseTest {
+import java.lang.reflect.Method;
+
+public class PIM_01_Employee_Multiple_File_XML extends BaseTest {
     WebDriver driver;
     private String browserName, employeeId;
     private LoginPO loginPage;
@@ -32,13 +27,9 @@ public class PIM_01_Employee extends BaseTest {
     private String firstname, middelname, lastname;
     private Environment environment;
 
-    //    @Parameters({"env", "browser"})
-    @Parameters({"browser"})
+    @Parameters({"env", "browser"})
     @BeforeClass
-    public void beforeClass(String browserName) {
-        // Lấy environment từ cmd của maven (mvn clean test -DENV=dev):  -D+...: thể hiện biến trong cmd;
-
-        String env = System.getProperty("ENV");
+    public void beforeClass(String env, String browserName) {
         ConfigFactory.setProperty("environment", env);
 
         environment = ConfigFactory.create(Environment.class);

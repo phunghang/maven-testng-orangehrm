@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="OrangeHRM">
+
+	<parameter name="env" value="dev" />
+	<listeners>
+		<listener class-name="reportConfig.ExtentTestListener" />
+	</listeners>
+
+	<!-- preserve-order = true chạy các class đúng theo thứ tự-->
+	<test name="Run on chrome" preserve-order="true">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="orangehrm.pim.PIM_01_Employee_Multiple_File_XML" />
+		</classes>
+	</test>
+<!--	<test name="Run on edge">-->
+<!--		<parameter name="browser" value="edge" />-->
+<!--		<classes>-->
+<!--			<class name="orangehrm.pim.PIM_01_Employee" />-->
+<!--		</classes>-->
+<!--	</test>-->
+
+<!--	<test name="Run on firefox">-->
+<!--		<parameter name="browser" value="firefox" />-->
+<!--		<classes>-->
+<!--			<class name="orangehrm.pim.PIM_01_Employee" />-->
+<!--		</classes>-->
+<!--	</test>-->
+
+</suite> 

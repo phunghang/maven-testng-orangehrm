@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="OrangeHRM">
 
-	<parameter name="url" value="http://localhost:90/orangehrm" />
+<!--	<parameter name="env" value="dev" />-->
 	<listeners>
 		<listener class-name="reportConfig.ExtentTestListener" />
 	</listeners>
