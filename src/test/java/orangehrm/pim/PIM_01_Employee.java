@@ -32,7 +32,6 @@ public class PIM_01_Employee extends BaseTest {
     private String firstname, middelname, lastname;
     private Environment environment;
 
-    //    @Parameters({"env", "browser"})
     @Parameters({"browser"})
     @BeforeClass
     public void beforeClass(String browserName) {
@@ -40,6 +39,7 @@ public class PIM_01_Employee extends BaseTest {
 
         String env = System.getProperty("ENV");
         ConfigFactory.setProperty("environment", env);
+        // key trong setProperty này phải giống với biến trong @Sources tại Environment
 
         environment = ConfigFactory.create(Environment.class);
         driver = getWebDriver(browserName, environment.getUrl());

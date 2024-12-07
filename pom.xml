@@ -15,12 +15,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Compiler Code with Java 17 -->
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
 
         <!-- Global variable for dependencies -->
         <webdriver.version>4.16.1</webdriver.version>
-        <testng.version>6.14.3</testng.version>
+        <testng.version>7.4.0</testng.version>
         <extent.version>5.1.0</extent.version>
         <environment>Dev</environment>
     </properties>
@@ -62,77 +62,75 @@
     </dependencies>
 
     <!-- Compiler/ Run Test -->
-<!--    <build>-->
-<!--        <plugins>-->
+    <build>
+        <plugins>
             <!-- Compiler -->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <version>3.10.1</version>-->
-<!--                &lt;!&ndash; Compiler code vs Java 17 &ndash;&gt;-->
-<!--                <configuration>-->
-<!--                    <source>17</source>-->
-<!--                    <target>17</target>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <!-- Compiler code vs Java 17 -->
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
 
             <!-- Run test -->
             <!--			Khi chạy bằng maven profile thì phải cmt chỗ này lại và ngược lại, chỉ chạy bằng plugin hoặc profile-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>3.1.2</version>-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash; Run TestNG xml file &ndash;&gt;-->
-<!--                    <suiteXmlFiles>-->
-<!--                        <suiteXmlFile>src/test/resources/RunOrangeHRMTestcase.xml</suiteXmlFile>-->
-<!--                    </suiteXmlFiles>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <!-- Run TestNG xml file -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/RunOrangeHRMTestcase.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <!-- Argument -->
 
-<!--                    &lt;!&ndash; Argument &ndash;&gt;-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
-    <profiles>
-
-<!--        Dùng cmd để chạy với câu lệnh mvn clean test-P DEV (-P + TÊN PROFILE)-->
-        <profile>
-            <id>DEV</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.1.2</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/RunOnDev.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>TESTING</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.1.2</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/RunOnStaging.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+<!--    <profiles>-->
+<!--&lt;!&ndash;        Dùng cmd để chạy với câu lệnh mvn clean test-P DEV (-P + TÊN PROFILE) phải comment plugin bên trên lại nếu không sẽ sung đọt&ndash;&gt;-->
+<!--        <profile>-->
+<!--            <id>DEV</id>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                        <version>3.1.2</version>-->
+<!--                        <configuration>-->
+<!--                            <suiteXmlFiles>-->
+<!--                                <suiteXmlFile>src/test/resources/RunOnDev.xml</suiteXmlFile>-->
+<!--                            </suiteXmlFiles>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
+<!--        <profile>-->
+<!--            <id>STAGING</id>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                        <version>3.1.2</version>-->
+<!--                        <configuration>-->
+<!--                            <suiteXmlFiles>-->
+<!--                                <suiteXmlFile>src/test/resources/RunOnStaging.xml</suiteXmlFile>-->
+<!--                            </suiteXmlFiles>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 
 
 </project>
