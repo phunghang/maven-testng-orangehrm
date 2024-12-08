@@ -15,14 +15,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Compiler Code with Java 17 -->
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
 
         <!-- Global variable for dependencies -->
-        <webdriver.version>4.16.1</webdriver.version>
-        <testng.version>7.4.0</testng.version>
+        <webdriver.version>4.26.0</webdriver.version>
+        <testng.version>7.7.0</testng.version>
         <extent.version>5.1.0</extent.version>
-        <environment>Dev</environment>
+        <environment>DEV</environment>
     </properties>
 
     <!-- Quản lí thư viện -->
@@ -71,8 +71,8 @@
                 <version>3.10.1</version>
                 <!-- Compiler code vs Java 17 -->
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
 
@@ -88,7 +88,9 @@
                         <suiteXmlFile>src/test/resources/RunOrangeHRMTestcase.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!-- Argument -->
-
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <printSummary>true</printSummary>
+                    <forkCount>1</forkCount>
                 </configuration>
             </plugin>
         </plugins>

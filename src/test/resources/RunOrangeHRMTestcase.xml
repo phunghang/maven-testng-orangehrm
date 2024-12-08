@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="OrangeHRM">
 
-<!--	<listeners>-->
-<!--		<listener class-name="reportConfig.ExtentTestListener" />-->
-<!--	</listeners>-->
+	<listeners>
+		<listener class-name="reportConfig.ExtentTestListener" />
+	</listeners>
 
 	<!-- preserve-order = true chạy các class đúng theo thứ tự-->
 	<test name="Run on chrome" preserve-order="true">
