@@ -9,20 +9,20 @@
 	<test name="Run on chrome" preserve-order="true">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="orangehrm.pim.PIM_01_Employee" />
+			<class name="orangehrm.pim.PIM_01_Employee_Create" />
 		</classes>
 	</test>
 <!--	<test name="Run on edge">-->
 <!--		<parameter name="browser" value="edge" />-->
 <!--		<classes>-->
-<!--			<class name="orangehrm.pim.PIM_01_Employee" />-->
+<!--			<class name="orangehrm.pim.PIM_01_Employee_Create" />-->
 <!--		</classes>-->
 <!--	</test>-->
 
 <!--	<test name="Run on firefox">-->
 <!--		<parameter name="browser" value="firefox" />-->
 <!--		<classes>-->
-<!--			<class name="orangehrm.pim.PIM_01_Employee" />-->
+<!--			<class name="orangehrm.pim.PIM_01_Employee_Create" />-->
 <!--		</classes>-->
 <!--	</test>-->
 
