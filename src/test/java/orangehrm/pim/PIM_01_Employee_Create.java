@@ -42,7 +42,6 @@ public class PIM_01_Employee_Create extends BaseTest {
         String env = System.getProperty("ENV");
         ConfigFactory.setProperty("environment", env);
         // key trong setProperty này phải giống với biến trong @Sources tại Environment
-
         environment = ConfigFactory.create(Environment.class);
         driver = getWebDriver(browserName, environment.getUrl());
         this.browserName = browserName;

@@ -2,6 +2,7 @@ package utilities;
 
 import net.datafaker.Faker;
 
+import java.time.Instant;
 import java.util.Locale;
 
 public class FakerConfigs {
@@ -31,4 +32,5 @@ public class FakerConfigs {
     public String getMiddleName() {
         return faker.name().name();
     }
+
 }

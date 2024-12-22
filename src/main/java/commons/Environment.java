@@ -13,4 +13,7 @@ public interface Environment extends Config {
     @Key("password")
     String getPassword ();
 
+    @Key("apiBaseUrl")
+    String getApiBaseUrl();
+
 }

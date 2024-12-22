@@ -4,7 +4,7 @@ import java.io.File;
 
 public class GlobalConstants {
 
-	public static final String DEV_ADMIN_URL = "http://localhost:90/orangehrm";
+	public static final String DEV_ADMIN_URL = "http://localhost:80/orangehrm";
 	public static final long LONG_TIMEOUT = 30;
 	public static final long SHORT_TIMEOUT = 5;
 	public static final String OS_NAME = System.getProperty("os.name");
