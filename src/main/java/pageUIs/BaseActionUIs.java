@@ -7,6 +7,7 @@ public class BaseActionUIs {
 	public static final String DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME ="xpath=//div[@class='oxd-table-header']//div[text() ='%s']/preceding-sibling::div";
 	public static final String DYNAMIC_COLUMN_VALUE_BY_ROW_INDEX_AND_COLUMN_INDEX ="xpath=//div[@class='oxd-table-card'][%s]//div[%s]/div[contains(text(),'%s')]";
 	public static final String DYNAMIC_REQUIRED_MSG_BY_INPUT_NAME = "xpath=//input [@name='%s']/parent::div/following-sibling::span [text()='Required']";
+	public static final String DYNAMIC_SIDE_BAR_BY_NAME ="xpath=//span[text()='%s']//parent::a[starts-with(@class,'oxd-main-menu-item')]";
 	
 
 }

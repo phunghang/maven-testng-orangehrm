@@ -9,7 +9,7 @@ import pageObjects.DependentsPO;
 import pageObjects.EmergencyContactsPO;
 import pageObjects.EmployeeListPO;
 import pageObjects.LoginPO;
-import pageObjects.PersonnalDetailPO;
+import pageObjects.PersonalDetailPO;
 
 public class PageGeneratorManager {
 
@@ -41,8 +41,8 @@ public class PageGeneratorManager {
 		return new LoginPO(driver);
 	}
 
-	public static PersonnalDetailPO getPersonnalDetailPO(WebDriver driver) {
-		return new PersonnalDetailPO(driver);
+	public static PersonalDetailPO getPersonalDetailPO(WebDriver driver) {
+		return new PersonalDetailPO(driver);
 	}
 
 }

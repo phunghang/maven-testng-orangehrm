@@ -32,4 +32,15 @@ public class BaseActions extends BasePage {
         return isElementDisplayed(driver, BaseActionUIs.DYNAMIC_REQUIRED_MSG_BY_INPUT_NAME, inputName);
     }
 
+    public BaseActions openPage(String pageName) {
+        waitForElementClickable(driver, BaseActionUIs.DYNAMIC_SIDE_BAR_BY_NAME, pageName);
+        clickToElement(driver, BaseActionUIs.DYNAMIC_SIDE_BAR_BY_NAME, pageName);
+        return switch (pageName) {
+            case "PIM" -> new EmployeeListPO(driver);
+            case "Dashboard" -> new DashboardPO(driver);
+            default -> throw new RuntimeException("Không tồn tại page: " + pageName);
+        };
+    }
+
+
 }

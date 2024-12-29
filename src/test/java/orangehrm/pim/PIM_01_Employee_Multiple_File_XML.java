@@ -23,7 +23,7 @@ public class PIM_01_Employee_Multiple_File_XML extends BaseTest {
     private DashboardPO dashboardPage;
     private EmployeeListPO employeeListPage;
     private AddNewEmployeePO addNewEmployeePage;
-    private PersonnalDetailPO personnalDetailPage;
+    private PersonalDetailPO personnalDetailPage;
     private String firstname, middelname, lastname;
     private Environment environment;
 
@@ -58,10 +58,10 @@ public class PIM_01_Employee_Multiple_File_XML extends BaseTest {
         Assert.assertTrue(addNewEmployeePage.isSucessMsgDisplayed("Successfully Saved"));
         addNewEmployeePage.waitIconLoadingInvisible();
 
-        personnalDetailPage = PageGeneratorManager.getPersonnalDetailPO(driver);
+        personnalDetailPage = PageGeneratorManager.getPersonalDetailPO(driver);
         personnalDetailPage.waitIconLoadingInvisible();
         Assert.assertEquals(personnalDetailPage.getFirstnameValue(), firstname);
-        Assert.assertEquals(personnalDetailPage.getMiddlenameValue(), middelname);
+        Assert.assertEquals(personnalDetailPage.getMiddlemenValue(), middelname);
         Assert.assertEquals(personnalDetailPage.getLastnameValue(), lastname);
         Assert.assertEquals(personnalDetailPage.getEmployeeIdValue(), employeeId);
 

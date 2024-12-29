@@ -14,14 +14,16 @@ public class ExtentManager {
 		reporter.config().setReportName("OrangeHRM HTML Report");
 		reporter.config().setDocumentTitle("OrangeHRM HTML Report");
 		reporter.config().setTimelineEnabled(true);
-		reporter.config().setEncoding("utf-8");
+		reporter.config().setEncoding("UTF-8");
 		reporter.config().setTheme(Theme.STANDARD);
+		reporter.config().setCss(".report-name, .test-name { font-family: Arial, sans-serif; }");
 
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("Company", "Hang");
 		extentReports.setSystemInfo("Project", "OrangeHRM");
 		extentReports.setSystemInfo("Team", "Autotest");
 		extentReports.setSystemInfo("JDK version", GlobalConstants.JAVA_VERSION);
+		extentReports.setSystemInfo("OS", GlobalConstants.OS_NAME);
 		return extentReports;
 	}
 }
